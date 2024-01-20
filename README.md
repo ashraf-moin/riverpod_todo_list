@@ -13,10 +13,10 @@ A simple Todo List app built with Flutter using the Riverpod state management li
 ## Screenshots
 
 
-<img src="screenshorts/Image01.jpg" alt="Image description" height="600">
-<img src="screenshorts/Image02.jpg" alt="Image description" height="600">
-<img src="screenshorts/Image03.jpg" alt="Image description" height="600">
-<img src="screenshorts/Image04.jpg" alt="Image description" height="600">
+<img src="screenshots/Image01.jpg" alt="Image description" height="600">
+<img src="screenshots/Image02.jpg" alt="Image description" height="600">
+<img src="screenshots/Image03.jpg" alt="Image description" height="600">
+<img src="screenshots/Image04.jpg" alt="Image description" height="600">
 
 
 ## Getting Started
