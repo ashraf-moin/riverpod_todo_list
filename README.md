@@ -1,16 +1,34 @@
-# riverpod_todo_list
+# Todo List App
 
-A new Flutter project.
+A simple Todo List app built with Flutter using the Riverpod state management library and SharedPreferences for data persistence.
+
+## Features
+
+- Add new tasks to the todo list.
+- Mark tasks as completed or incomplete.
+- Remove tasks from the todo list.
+- Persistent storage of tasks using SharedPreferences.
+- Responsive design for various screen sizes.
+
+## Screenshots
+
+
+<img src="screenshorts/Image01.jpg" alt="Image description" height="600">
+<img src="screenshorts/Image02.jpg" alt="Image description" height="600">
+<img src="screenshorts/Image03.jpg" alt="Image description" height="600">
+<img src="screenshorts/Image04.jpg" alt="Image description" height="600">
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter installed on your machine ([Flutter Installation Guide](https://flutter.dev/docs/get-started/install))
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/todo-list-app.git
+cd todo-list-app

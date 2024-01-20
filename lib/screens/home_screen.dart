@@ -6,7 +6,7 @@ import 'package:riverpod_todo_list/utils/utils.dart';
 import 'package:gap/gap.dart';
 import 'package:riverpod_todo_list/widgets/display_white_text.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:msh_checkbox/msh_checkbox.dart';
 import '../widgets/show_dialog.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -31,11 +31,7 @@ class HomeScreen extends ConsumerWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      DisplayWhiteText(
-                        text: "Aug 7,2023",
-                        fontSize: 20,
-                        fontWeight: FontWeight.normal,
-                      ),
+
                       const Gap(20),
                       DisplayWhiteText(
                         text: "My Todo List",
@@ -60,7 +56,7 @@ class HomeScreen extends ConsumerWidget {
                 children: [
                   // Incomplete Task
                   Container(
-                    height: deviceSize.height * 0.3,
+                    height: deviceSize.height *0.6,
                     width: deviceSize.width,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -70,43 +66,75 @@ class HomeScreen extends ConsumerWidget {
                       shrinkWrap: true,
                       padding: EdgeInsets.zero,
                       itemCount: todoList.length,
-                      itemBuilder: (context, index) {
+                      itemBuilder: (context, itemIndex) {
+                        final todo = todoList[itemIndex];
+                        print(
+                            "Task Title: ${todo.title}, Completed: ${todo.isCompleted}");
                         return ListTile(
-                          title: Text(todoList[index].title),
+                          title: Text(todo.title),
+                          subtitle: Text('Completed: ${todo.isCompleted}'),
+                          onTap: () {
+
+                            // ref.read(todoListProvider.notifier).updateTodo(
+                            //       todo,
+                            //       TODOModel(
+                            //         title: todo.title,
+                            //         isCompleted: !todo.isCompleted,
+                            //       ),
+                            //     );
+
+                            final todo = todoList[itemIndex];
+                            print("Before Toggle - Task Title: ${todo.title}, Completed: ${todo.isCompleted}");
+                            // ref.read(todoListProvider.notifier).toggleTodoStatus(todo);
+                            ref.watch(todoListProvider.notifier).toggleTodoStatus(todo);
+                            print("After Toggle - Task Title: ${todo.title}, Completed: ${todo.isCompleted}");
+
+
+
+
+
+
+
+                          },
+                          trailing: IconButton(
+                            onPressed: () {
+                              ref
+                                  .read(todoListProvider.notifier)
+                                  .removeTodo(todo);
+                            },
+                            icon: Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ),
+                          ),
                         );
                       },
                     ),
                   ),
                   const Gap(20),
                   // Completed Task
-                  Text(
-                    "Completed",
-                    style: context.textTheme.headlineMedium,
-                  ),
+                  // Text(
+                  //   "Completed",
+                  //   style: context.textTheme.headlineMedium,
+                  // ),
                   const Gap(20),
-                  Container(
-                    height: deviceSize.height * 0.25,
-                    width: deviceSize.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: colors.primaryContainer,
-                    ),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      padding: EdgeInsets.zero,
-                      itemCount: 8,
-                      itemBuilder: (ctx, index) {
-                        return const Text("Completed task");
-                      },
-                    ),
-                  ),
+                  // Container(
+                  //   height: deviceSize.height * 0.25,
+                  //   width: deviceSize.width,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(10),
+                  //     color: colors.primaryContainer,
+                  //   ),
+                  //   child: ListView.builder(
+                  //     shrinkWrap: true,
+                  //     padding: EdgeInsets.zero,
+                  //   ),
+                  // ),
                   const Gap(20),
                   ElevatedButton(
                     onPressed: () {
                       DialogUtils.showAddTodoDialog(context, ref);
-
                     },
-
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: DisplayWhiteText(

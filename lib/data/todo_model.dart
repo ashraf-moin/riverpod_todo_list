@@ -9,6 +9,9 @@ class TODOModel {
     required this.isCompleted,
   });
 
+
+
+
   // Convert TODOModel to a map (to store in SharedPreferences)
   Map<String, dynamic> toMap() {
     return {
@@ -35,4 +38,5 @@ class TODOModel {
     final Map<String, dynamic> map = json.decode(jsonString);
     return TODOModel.fromMap(map);
   }
+
 }
