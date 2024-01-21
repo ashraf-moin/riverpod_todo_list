@@ -13,10 +13,10 @@ A simple Todo List app built with Flutter using the Riverpod state management li
 ## Screenshots
 
 
-<img src="screenshots/Image01.jpg" alt="Image description" height="600">
-<img src="screenshots/Image02.jpg" alt="Image description" height="600">
-<img src="screenshots/Image03.jpg" alt="Image description" height="600">
-<img src="screenshots/Image04.jpg" alt="Image description" height="600">
+<img src="Screenshots/Image01.jpg" alt="Image description" height="600">
+<img src="Screenshots/Image02.jpg" alt="Image description" height="600">
+<img src="Screenshots/Image03.jpg" alt="Image description" height="600">
+<img src="Screenshots/Image04.jpg" alt="Image description" height="600">
 
 
 ## Getting Started
@@ -32,3 +32,7 @@ These instructions will help you get a copy of the project up and running on you
 ```bash
 git clone https://github.com/your-username/todo-list-app.git
 cd todo-list-app
+
+
+
+ **Happy Learning and Todo-ing! **
